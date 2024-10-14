@@ -5,12 +5,12 @@ import { menu_list } from '../../assets/assets';
 const ExploreMenu = ({ category, setCategory }) => { // Destructure props
   return (
     <div className='explore-menu' id='explore-menu'>
-      <h1>Explore our menu</h1>
-      
-      <div className='explore-menu-list'>
+      <h1>Explore our menu</h1> 
+
+      <div className='explore-menu-list'>  
         {menu_list.map((item, index) => (
           <div 
-            onClick={() => setCategory(prev => prev === item.menu_name ? "All" : item.menu_name)} 
+            onClick={() => setCategory(prev => prev === item.menu_name ? "All" : item.menu_name)}  
             key={index} 
             className='explore-menu-list-item'
           >
