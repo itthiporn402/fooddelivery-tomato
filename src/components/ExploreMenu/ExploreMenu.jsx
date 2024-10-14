@@ -6,7 +6,7 @@ const ExploreMenu = ({ category, setCategory }) => { // Destructure props
   return (
     <div className='explore-menu' id='explore-menu'>
       <h1>Explore our menu</h1>
-      <p className='explore-menu-text'>ใส่ข้อความ</p>
+      
       <div className='explore-menu-list'>
         {menu_list.map((item, index) => (
           <div 
