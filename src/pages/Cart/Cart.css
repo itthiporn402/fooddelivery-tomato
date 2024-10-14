@@ -12,6 +12,25 @@
     margin: 10px 0px;
     color: black;
 }
+
+.cart-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart-quantity button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .cart-total-details .discount-amount {
+    color: green;
+    font-weight: bold;
+  }
+  
 .cart-item-item img{
     width: 50px;
 }

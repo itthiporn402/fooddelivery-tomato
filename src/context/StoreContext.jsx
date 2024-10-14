@@ -4,28 +4,30 @@ import { food_list } from "../assets/assets.js";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-    const [cartItem, setCartItem] = useState({}); // Correctly named state
+    const [cartItem, setCartItem] = useState({});
 
     const addToCart = (itemId) => {
-        if (!cartItem[itemId]) { // Use cartItem instead of cartItems
+        if (!cartItem[itemId]) { 
             setCartItem((prev) => ({ ...prev, [itemId]: 1 }));
             
         } else {
-            setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 })); // Correct function name
+            setCartItem((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 })); 
         }
     }
 
-    const removeFromCart = (itemId) => {
-        setCartItem((prev) => {
-            const updatedCart = { ...prev };
-            if (updatedCart[itemId] > 1) {
-                updatedCart[itemId] -= 1;
-            } else {
-                delete updatedCart[itemId]; // Remove the item if its quantity reaches 0
-            }
-            return updatedCart;
+    const removeFromCart = (itemId, count = 1) => {
+        setCartItem((prevCart) => {
+          const updatedCart = { ...prevCart };
+      
+          if (count >= updatedCart[itemId]) {
+            delete updatedCart[itemId];
+          } else {
+            updatedCart[itemId] -= count;
+          }
+      
+          return updatedCart;
         });
-    };
+      };
 
     const getTotalCartAmount = () => {
         let totalAmount = 0;
